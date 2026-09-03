@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prasanna Agarwal — Robotics Engineer</title>
+<meta name="description" content="Prasanna Agarwal — mobile robotics, autonomous navigation, trajectory planning. Based in Dortmund.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="#" class="wordmark">Prasanna Agarwal.</a>
+  <a class="cv-link" href="#" id="cv-link">view CV</a>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-lede">I have a strong pull toward robots that can find their own way — through a room, a forest path, or a shipping container full of mist.</p>
+
+    <div class="word-collage" aria-hidden="false">
+      <span class="cw cw-a">autonomous</span>
+      <span class="cw cw-b">robotics</span>
+      <span class="cw cw-c">robotics</span>
+      <span class="cw cw-dash">– navigation</span>
+      <span class="cw cw-dash">– planning</span>
+      <span class="cw cw-final">engineer</span>
+      <span class="cw cw-caption">based in Dortmund</span>
+    </div>
+
+    <p class="tip-hint">tap the underlined words below for a sneak peek</p>
+  </section>
+
+  <!-- MY STORY -->
+  <section id="about" class="story">
+    <div class="section-kicker">my story</div>
+    <h2>I'd rather teach a robot to think than tell it exactly what to do.</h2>
+
+    <div class="story-body">
+      <p>I'm a Master's student in Automation and Robotics at
+        <button class="term" data-tip="Technical University Dortmund, Germany — where I'm finishing my Master's.">TU Dortmund</button>,
+        working across mobile robotics, autonomous navigation, and ROS2. It started with a
+        <button class="term" data-tip="B.Tech in Mechatronics Engineering, SRM Institute of Science and Technology, Chennai — graduated May 2022.">Mechatronics degree in Chennai</button>,
+        and it's slowly narrowed into one obsession: getting a robot to plan and hold a good path through a messy, real environment.
+      </p>
+      <p>My thesis builds a
+        <button class="term" data-tip="A generative approach that learns to denoise random paths into smooth, collision-aware trajectories — trained on BiRRT-sampled paths.">hierarchical diffusion planner</button>
+        into a TurtleBot's navigation stack over ROS2 and Nav2 — graded 1.3 (sehr gut). Outside the thesis, I've been building sensing for a robot that has to see through mist and blower noise inside an industrial shipping container, and teaching another robot to follow spoken commands across a room.
+      </p>
+      <p>When I'm not debugging a planner, I'm probably hiking, playing basketball, or — once my license comes through — out on a motorcycle.</p>
+    </div>
+  </section>
+
+  <!-- MY WORK -->
+  <section id="work" class="work">
+    <div class="section-kicker">my work</div>
+    <h2>Things I've built, broken, and learned from.</h2>
+    <p class="work-lede">Some of this solves a real problem for a real robot. Some of it exists because I wanted to know if it could be done. Tap a project to open it up.</p>
+
+    <div class="project-list">
+
+      <article class="project-card" data-project="thesis">
+        <button class="project-toggle" aria-expanded="false">
+          <div class="project-visual" aria-hidden="true">
+            <svg viewBox="0 0 200 140"><path class="pv-path" d="M20 115 C 60 90, 55 55, 100 50 S 160 25, 180 15" fill="none"/><circle class="pv-dot" cx="20" cy="115" r="5"/><circle class="pv-dot" cx="100" cy="50" r="4"/><circle class="pv-dot" cx="180" cy="15" r="5"/></svg>
+          </div>
+          <div class="project-text">
+            <span class="project-tag">MSc thesis · grade 1.3</span>
+            <h3>Diffusion-Based Trajectory Planning</h3>
+            <p>Teaching a TurtleBot to plan its path with a diffusion model instead of a classical planner.</p>
+          </div>
+          <span class="project-plus">+</span>
+        </button>
+        <div class="project-detail">
+          <p><strong>The idea.</strong> Classical planners like RRT search for a path step by step. I wanted to know if a diffusion model — the same family of model behind image generation — could learn to "denoise" a rough path into a smooth, collision-aware trajectory instead.</p>
+          <p><strong>The build.</strong> A hierarchical diffusion planner trained on BiRRT-sampled paths across SLAM-mapped environments, wired into a TurtleBot's navigation stack via ROS2 and Nav2.</p>
+          <p><strong>The stack.</strong> Python, PyTorch, ROS2, Nav2, SLAM.</p>
+          <p><strong>What I learned.</strong> How much of "good navigation" is actually about the shape of your training distribution, not just the model architecture. This project set the direction for everything I've worked on since.</p>
+        </div>
+      </article>
+
+      <article class="project-card" data-project="mcs">
+        <button class="project-toggle" aria-expanded="false">
+          <div class="project-visual" aria-hidden="true">
+            <svg viewBox="0 0 200 140"><rect class="pv-box" x="30" y="30" width="140" height="90" rx="2"/><g class="pv-mist"><circle cx="70" cy="60" r="3"/><circle cx="95" cy="45" r="2.5"/><circle cx="120" cy="65" r="3.5"/><circle cx="140" cy="48" r="2"/><circle cx="60" cy="90" r="2.5"/><circle cx="110" cy="95" r="3"/></g></svg>
+          </div>
+          <div class="project-text">
+            <span class="project-tag">MCS Robotics · in progress</span>
+            <h3>Mapping Through Mist</h3>
+            <p>Sensing for a container-cleaning robot in conditions that blind most sensors.</p>
+          </div>
+          <span class="project-plus">+</span>
+        </button>
+        <div class="project-detail">
+          <p><strong>The problem.</strong> A robot cleans the inside of shipping containers with high-pressure water and air. LiDAR returns scatter off airborne mist; ultrasound drowns in blower noise. There's no gap in the spray to sense around — the interference is constant.</p>
+          <p><strong>The approach.</strong> Rather than fight the sensors the environment defeats, I'm building a 3D map of the container from LiDAR and camera in advance, so the robot can localize against known wall geometry instead of trusting live noisy returns. That's <code>mcs_mapping</code> — a ROS2 package with an ICP pipeline running on Jetson.</p>
+          <p><strong>The stack.</strong> Hesai JT128 LiDAR, ICP, visual odometry with ORB feature matching, ROS2, Jetson.</p>
+          <p><strong>Where it stands.</strong> Actively debugging mapping artifacts and exploring mmWave radar as a longer-term answer to the mist problem itself.</p>
+        </div>
+      </article>
+
+      <article class="project-card" data-project="voice">
+        <button class="project-toggle" aria-expanded="false">
+          <div class="project-visual" aria-hidden="true">
+            <svg viewBox="0 0 200 140"><g class="pv-wave"><rect x="30" y="60" width="6" height="20"/><rect x="45" y="45" width="6" height="50"/><rect x="60" y="55" width="6" height="30"/><rect x="75" y="30" width="6" height="80"/><rect x="90" y="50" width="6" height="40"/><rect x="105" y="40" width="6" height="60"/><rect x="120" y="58" width="6" height="24"/><rect x="135" y="48" width="6" height="44"/><rect x="150" y="62" width="6" height="16"/></g></svg>
+          </div>
+          <div class="project-text">
+            <span class="project-tag">personal project</span>
+            <h3>Voice-Controlled Navigation</h3>
+            <p>Say where to go, and a simulated robot goes there — in whatever accent you've got.</p>
+          </div>
+          <span class="project-plus">+</span>
+        </button>
+        <div class="project-detail">
+          <p><strong>The idea.</strong> Most voice-control demos only work with one accent, spoken clearly, one command at a time. I wanted something more forgiving.</p>
+          <p><strong>The build.</strong> OpenAI Whisper handles multi-accent speech recognition, a ROS timer-based queue sequences multiple spoken commands in order, and velocity is streamed live as <code>Twist</code> messages to drive a robot through Gazebo.</p>
+          <p><strong>The stack.</strong> ROS2, Whisper, Gazebo, Python.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- MY TOOLKIT -->
+  <section id="toolkit" class="toolkit">
+    <div class="section-kicker">my toolkit</div>
+    <h2>The tools I reach for.</h2>
+
+    <div class="toolkit-list">
+      <div class="toolkit-row">
+        <span class="toolkit-cat">Robotics &amp; Simulation</span>
+        <span class="toolkit-items">ROS1 / ROS2, Gazebo, RViz, MuJoCo, SLAM, Nav2, trajectory planning</span>
+      </div>
+      <div class="toolkit-row">
+        <span class="toolkit-cat">Programming</span>
+        <span class="toolkit-items">Python, C, C++</span>
+      </div>
+      <div class="toolkit-row">
+        <span class="toolkit-cat">ML &amp; Computer Vision</span>
+        <span class="toolkit-items">PyTorch, TensorFlow, OpenCV, 3D computer vision</span>
+      </div>
+      <div class="toolkit-row">
+        <span class="toolkit-cat">Embedded Systems</span>
+        <span class="toolkit-items">IR / LDR sensors, motor drivers, embedded C</span>
+      </div>
+      <div class="toolkit-row">
+        <span class="toolkit-cat">Tooling</span>
+        <span class="toolkit-items">Docker, GitHub Actions, Linux</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section id="contact" class="connect">
+    <div class="section-kicker">let's connect</div>
+    <h2>The internet is a big place, but I'm easy enough to find.</h2>
+    <p class="connect-lede">Got a robotics role, a research idea, or a robot that needs to find its own way somewhere? Let's talk.</p>
+
+    <a class="connect-email" href="mailto:prasanna23ag@gmail.com">prasanna23ag@gmail.com</a>
+
+    <div class="connect-links">
+      <a href="https://github.com/Prasanna23-ag" target="_blank" rel="noopener">GitHub ↗</a>
+      <!-- Replace # with your LinkedIn URL -->
+      <a href="#">LinkedIn ↗</a>
+    </div>
+
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      <!-- edit this line any time your availability changes -->
+      open to robotics opportunities
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <nav>
+    <a href="#about">My Story</a>
+    <a href="#work">My Work</a>
+    <a href="#toolkit">My Toolkit</a>
+    <a href="#contact">Let's Connect</a>
+  </nav>
+  <span id="year"></span>
+</footer>
+
+<div class="tooltip" id="tooltip" role="tooltip"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
