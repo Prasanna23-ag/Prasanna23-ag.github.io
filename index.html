@@ -81,6 +81,17 @@
           <p><strong>The build.</strong> A hierarchical diffusion planner trained on BiRRT-sampled paths across SLAM-mapped environments, wired into a TurtleBot's navigation stack via ROS2 and Nav2.</p>
           <p><strong>The stack.</strong> Python, PyTorch, ROS2, Nav2, SLAM.</p>
           <p><strong>What I learned.</strong> How much of "good navigation" is actually about the shape of your training distribution, not just the model architecture. This project set the direction for everything I've worked on since.</p>
+          <div class="project-media">
+            <!-- Replace each figure's placeholder with a real <img src="images/thesis-1.jpg" alt="..."> once you have screenshots -->
+            <figure class="media-placeholder"><span>+ add image</span></figure>
+            <figure class="media-placeholder"><span>+ add image</span></figure>
+          </div>
+          <div class="project-links">
+            <!-- Replace # with your actual GitHub repo URL -->
+            <a href="#" class="project-link" target="_blank" rel="noopener">View Repo ↗</a>
+            <!-- Replace # with your Google Drive report/thesis link -->
+            <a href="#" class="project-link" target="_blank" rel="noopener">View Report ↗</a>
+          </div>
         </div>
       </article>
 
@@ -101,6 +112,14 @@
           <p><strong>The approach.</strong> Rather than fight the sensors the environment defeats, I'm building a 3D map of the container from LiDAR and camera in advance, so the robot can localize against known wall geometry instead of trusting live noisy returns. That's <code>mcs_mapping</code> — a ROS2 package with an ICP pipeline running on Jetson.</p>
           <p><strong>The stack.</strong> Hesai JT128 LiDAR, ICP, visual odometry with ORB feature matching, ROS2, Jetson.</p>
           <p><strong>Where it stands.</strong> Actively debugging mapping artifacts and exploring mmWave radar as a longer-term answer to the mist problem itself.</p>
+          <div class="project-media">
+            <figure class="media-placeholder"><span>+ add image</span></figure>
+            <figure class="media-placeholder"><span>+ add image</span></figure>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link" target="_blank" rel="noopener">View Repo ↗</a>
+            <a href="#" class="project-link" target="_blank" rel="noopener">View Report ↗</a>
+          </div>
         </div>
       </article>
 
@@ -120,6 +139,14 @@
           <p><strong>The idea.</strong> Most voice-control demos only work with one accent, spoken clearly, one command at a time. I wanted something more forgiving.</p>
           <p><strong>The build.</strong> OpenAI Whisper handles multi-accent speech recognition, a ROS timer-based queue sequences multiple spoken commands in order, and velocity is streamed live as <code>Twist</code> messages to drive a robot through Gazebo.</p>
           <p><strong>The stack.</strong> ROS2, Whisper, Gazebo, Python.</p>
+          <div class="project-media">
+            <figure class="media-placeholder"><span>+ add image</span></figure>
+            <figure class="media-placeholder"><span>+ add image</span></figure>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link" target="_blank" rel="noopener">View Repo ↗</a>
+            <a href="#" class="project-link" target="_blank" rel="noopener">View Report ↗</a>
+          </div>
         </div>
       </article>
 
