@@ -403,6 +403,11 @@ main > section {
   margin-bottom: 16px;
 }
 
+.project-media--single {
+  grid-template-columns: 1fr;
+  max-width: 420px;
+}
+
 .media-placeholder {
   margin: 0;
   aspect-ratio: 4 / 3;
@@ -440,6 +445,7 @@ main > section {
 
 .project-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 18px;
 }
