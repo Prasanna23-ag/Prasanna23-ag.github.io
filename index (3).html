@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contour Crafting 3D Printer — Prasanna Agarwal</title>
+<title>Voice-Controlled Navigation — Prasanna Agarwal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,22 +20,19 @@
   <div class="project-page">
     <a class="back-link" href="../../index.html#work">← Back to projects</a>
 
-    <span class="project-page-tag">Bachelor's Project · Mechatronics, SRM</span>
-    <h1>Contour Crafting with IoT-Based End-Effector</h1>
-    <p class="project-page-lede">A downscaled wall-printing system with an IoT-controlled end effector.</p>
+    <span class="project-page-tag">Personal Project</span>
+    <h1>Voice-Controlled Navigation</h1>
+    <p class="project-page-lede">Say where to go, and a simulated robot goes there, in whatever accent you've got.</p>
 
     <div class="project-detail">
-      <p><strong>The build.</strong> A downscaled 3D printing system for constructing walls, built during my B.Tech in Mechatronics Engineering at SRM Institute of Science and Technology.</p>
-      <p><strong>The end effector.</strong> An IoT-controlled end effector manages concrete flow during printing and can trigger instant stoppage if something goes wrong mid-print.</p>
+      <p><strong>The idea.</strong> Most voice-control demos only work with one accent, spoken clearly, one command at a time. I wanted something more forgiving.</p>
+      <p><strong>The build.</strong> A ROS2 package that controls a TurtleBot3 in Gazebo via spoken commands, publishing velocity commands over <code>/cmd_vel</code>. Multi-accent speech recognition covers five English and German locales, with fuzzy matching for robust command interpretation.</p>
+      <p><strong>The sequencing.</strong> A command-queueing system supports multi-step voice sequences, with automatic timed execution and a safety auto-stop.</p>
+      <p><strong>The stack.</strong> ROS2, OpenAI Whisper, Gazebo, Python.</p>
 
-      <!-- Add more detail here (specific hardware, control approach, results) once you're ready to expand this page -->
-
-      <div class="project-media">
-        <figure class="media-placeholder"><span>+ add image</span></figure>
-        <figure class="media-placeholder"><span>+ add image</span></figure>
+      <div class="project-links">
+        <a href="https://github.com/Prasanna23-ag/voice-teleop-turtlebot3" class="project-link" target="_blank" rel="noopener">View Repo ↗</a>
       </div>
-
-      <!-- Add a project-links block here once you have a repo or report link for this project -->
     </div>
   </div>
 </main>
