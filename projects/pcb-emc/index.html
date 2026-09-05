@@ -20,17 +20,19 @@
   <div class="project-page">
     <a class="back-link" href="../../index.html#work">← Back to projects</a>
 
-    <span class="project-page-tag">Research Project · Signal Integrity Subgroup · Oct 2023 – Jun 2024</span>
-    <h1>AI-Based SI/PI/EMC-Compliant PCB</h1>
-    <p class="project-page-lede">Using CNN-based image processing to catch interference-prone patterns in PCB layouts.</p>
+    <span class="project-page-tag">Project Group WISE 2023/24 · AG Datentechnik, TU Dortmund</span>
+    <h1>AI-Based SI/PI/EMC-Compliant PCB Design</h1>
+    <p class="project-page-lede">Using regression and CNN models to predict and classify signal integrity in high-speed PCB circuits.</p>
 
     <div class="project-detail">
-      <p><strong>The goal.</strong> Enhance interference-resistant PCB design by applying AI/ML methods to catch signal integrity (SI), power integrity (PI), and EMC-related issues earlier in the layout process.</p>
-      <p><strong>The approach.</strong> CNN-based image processing and feature detection to identify SI/PI/EMC-related patterns directly in PCB layouts, combining microelectronics expertise with machine learning to develop more robust, interference-resistant microelectronic systems.</p>
+      <p><strong>The goal.</strong> Signal integrity (SI) problems — reflection, crosstalk, dispersion — force PCB designers through multiple costly redesign cycles. This project, done with a team at TU Dortmund's Information Processing Lab, applies machine learning to predict and classify SI performance for single-ended and differential PCB signal pairs, cutting down on simulation-heavy design cycles.</p>
+      <p><strong>The data.</strong> Using Zuken's eCADSTAR simulation software, we generated eye-diagram and transient-response datasets by sweeping transmission-line length, impedance, and resistance across hundreds of simulated configurations for both single-ended and differential topologies.</p>
+      <p><strong>The models.</strong> An ANN regression model predicts transient-response and eye-diagram measurements (zero level, amplitude, rise/fall time, and more) directly from circuit parameters. A separate CNN classifies eye-diagram images as passing or failing predefined height and width thresholds. Both were deployed through a Streamlit dashboard for interactive use.</p>
+      <p><strong>My focus.</strong> I worked on the regression model for transient-response prediction and the binary CNN classifier for eye-diagram pass/fail classification.</p>
 
       <div class="project-media">
-        <figure class="media-placeholder"><span>+ add image</span></figure>
-        <figure class="media-placeholder"><span>+ add image</span></figure>
+        <figure><img src="pcb-eye-diagram.png" alt="An eye diagram from eCADSTAR simulation, showing overlaid signal traces used to assess signal integrity"><figcaption>An eye diagram — the core signal integrity visualization</figcaption></figure>
+        <figure><img src="pcb-regression-result.png" alt="Scatter plot comparing the regression model's predicted vs actual zero-level voltage values"><figcaption>Regression model: predicted vs. actual (zero level, V)</figcaption></figure>
       </div>
 
       <div class="project-links">
