@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diffusion-Based Trajectory Planning — Prasanna Agarwal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="../../index.html" class="wordmark">Prasanna Agarwal.</a>
+  <a class="cv-link" href="../../Prasanna_Agarwal_CV.pdf" target="_blank" rel="noopener">view CV</a>
+</header>
+
+<main>
+  <div class="project-page">
+    <a class="back-link" href="../../index.html#work">← Back to projects</a>
+
+    <span class="project-page-tag">MSc Thesis · TU Dortmund · Grade 1.3</span>
+    <h1>Trajectory Planning in Mobile Robots Using Diffusion Probabilistic Models</h1>
+    <p class="project-page-lede">Teaching a TurtleBot to plan its path with a diffusion model instead of a classical planner.</p>
+
+    <div class="project-detail">
+      <p><strong>The background.</strong> Classical planners like RRT and BiRRT search for a path step by step. For my Master's thesis in Automation and Robotics at TU Dortmund, I wanted to know whether a diffusion model, the same family of model behind image generation, could learn to "denoise" a rough path into a smooth, collision-aware trajectory instead.</p>
+      <p><strong>The build.</strong> I developed a hierarchical diffusion-based trajectory planning framework, trained on large-scale BiRRT datasets generated across SLAM-mapped environments. The trained models were then integrated into a TurtleBot's navigation stack using ROS2 and Nav2 to demonstrate autonomous navigation end to end.</p>
+      <p><strong>The approach.</strong> Rather than replacing classical motion planning outright, the thesis combines generative modeling with it, using the diffusion model to improve path feasibility and robustness on top of the classical foundation.</p>
+      <p><strong>The stack.</strong> Python, PyTorch, ROS2, Nav2, SLAM, BiRRT-based dataset generation.</p>
+      <p><strong>The grade.</strong> 1.3 on the German university grading scale, where 1.0 is the best possible grade and 4.0 is the minimum passing grade. 1.3 corresponds to <em>sehr gut</em> (very good).</p>
+      <p><strong>What I learned.</strong> How much of "good navigation" is actually about the shape of your training distribution, not just the model architecture. This project set the direction for everything I've worked on since.</p>
+
+      <div class="project-media">
+        <!-- Replace each figure's placeholder with a real <img src="thesis-1.jpg" alt="..."> once you have screenshots -->
+        <figure class="media-placeholder"><span>+ add image</span></figure>
+        <figure class="media-placeholder"><span>+ add image</span></figure>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/Prasanna23-ag/Masters-Thesis-Trajectory-Planning-in-Mobile-Robots-with-Diffusion-Probabilistic-Models" class="project-link" target="_blank" rel="noopener">View Repo ↗</a>
+        <a href="https://drive.google.com/file/d/1L6xP8thHTPDPGyRheWBKqXAwLk8_bw0O/view?usp=drive_link" class="project-link" target="_blank" rel="noopener">View Report ↗</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <nav>
+    <a href="../../index.html#about">My Story</a>
+    <a href="../../index.html#education">My Education</a>
+    <a href="../../index.html#experience">My Experience</a>
+    <a href="../../index.html#work">My Work</a>
+    <a href="../../index.html#toolkit">My Toolkit</a>
+    <a href="../../index.html#contact">Let's Connect</a>
+  </nav>
+  <span id="year"></span>
+</footer>
+
+<div class="tooltip" id="tooltip" role="tooltip"></div>
+<script src="../../script.js"></script>
+</body>
+</html>

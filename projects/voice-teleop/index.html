@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice-Controlled Navigation — Prasanna Agarwal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="../../index.html" class="wordmark">Prasanna Agarwal.</a>
+  <a class="cv-link" href="../../Prasanna_Agarwal_CV.pdf" target="_blank" rel="noopener">view CV</a>
+</header>
+
+<main>
+  <div class="project-page">
+    <a class="back-link" href="../../index.html#work">← Back to projects</a>
+
+    <span class="project-page-tag">Personal Project</span>
+    <h1>Voice-Controlled Navigation</h1>
+    <p class="project-page-lede">Say where to go, and a simulated robot goes there, in whatever accent you've got.</p>
+
+    <div class="project-detail">
+      <p><strong>The idea.</strong> Most voice-control demos only work with one accent, spoken clearly, one command at a time. I wanted something more forgiving.</p>
+      <p><strong>The build.</strong> A ROS2 package that controls a TurtleBot3 in Gazebo via spoken commands, publishing velocity commands over <code>/cmd_vel</code>. Multi-accent speech recognition covers five English and German locales, with fuzzy matching for robust command interpretation.</p>
+      <p><strong>The sequencing.</strong> A command-queueing system supports multi-step voice sequences, with automatic timed execution and a safety auto-stop.</p>
+      <p><strong>The stack.</strong> ROS2, OpenAI Whisper, Gazebo, Python.</p>
+
+      <div class="project-links">
+        <a href="https://github.com/Prasanna23-ag/voice-teleop-turtlebot3" class="project-link" target="_blank" rel="noopener">View Repo ↗</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <nav>
+    <a href="../../index.html#about">My Story</a>
+    <a href="../../index.html#education">My Education</a>
+    <a href="../../index.html#experience">My Experience</a>
+    <a href="../../index.html#work">My Work</a>
+    <a href="../../index.html#toolkit">My Toolkit</a>
+    <a href="../../index.html#contact">Let's Connect</a>
+  </nav>
+  <span id="year"></span>
+</footer>
+
+<div class="tooltip" id="tooltip" role="tooltip"></div>
+<script src="../../script.js"></script>
+</body>
+</html>
