@@ -203,42 +203,156 @@ main > section {
 .term:hover, .term:focus-visible { color: var(--accent); }
 
 /* ============================================
-   MY WORK
+   MY EDUCATION
    ============================================ */
-.work-lede {
-  margin-top: 18px;
-  color: var(--text-soft);
-  max-width: 56ch;
-}
-
-.project-list {
-  margin-top: 36px;
+.education-list {
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 28px;
 }
 
-.project-card {
+.education-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.education-head h3 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.education-dates {
+  font-size: 13px;
+  color: var(--accent-2);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.education-org {
+  font-size: 14.5px;
+  color: var(--text-soft);
+  margin-top: 4px;
+}
+
+.education-detail {
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--text-soft);
+  max-width: 62ch;
+}
+
+/* ============================================
+   MY EXPERIENCE
+   ============================================ */
+.experience-list {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.experience-item { max-width: 66ch; }
+
+.experience-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.experience-head h3 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.experience-dates {
+  font-size: 13px;
+  color: var(--accent-2);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.experience-org {
+  font-size: 14.5px;
+  color: var(--text-soft);
+  margin-top: 4px;
+}
+
+.experience-summary {
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--text-soft);
+}
+
+.experience-bullets {
+  margin: 14px 0 0;
+  padding-left: 20px;
+  color: var(--text-soft);
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.experience-highlight {
+  margin-top: 20px;
+  padding: 20px clamp(16px, 3vw, 26px);
+  background: var(--paper-2);
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: var(--paper-2);
-  overflow: hidden;
+}
+.experience-highlight h4 {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.experience-highlight p {
+  font-size: 14.5px;
+  color: var(--text-soft);
+  padding-bottom: 10px;
+}
+.experience-highlight p strong { color: var(--ink); }
+.experience-highlight .project-links { margin-bottom: 0; }
+
+.project-link--disabled {
+  cursor: default;
+  color: var(--text-soft);
+  background: var(--paper);
+}
+.project-link--disabled:hover {
+  color: var(--text-soft);
+  background: var(--paper);
+  border-color: var(--line);
 }
 
-.project-toggle {
-  width: 100%;
+/* ============================================
+   MY WORK — project cards as plain links
+   ============================================ */
+.project-card {
   display: grid;
-  grid-template-columns: 84px 1fr 24px;
+  grid-template-columns: 84px 1fr;
   align-items: center;
   gap: 20px;
   padding: 18px 20px;
-  background: none;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  font: inherit;
-  color: inherit;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper-2);
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
+.project-card:hover {
+  background: #E3DEF0;
+  border-color: var(--accent);
+}
+.project-card:hover h3 { color: var(--accent); }
+
 
 .project-visual {
   width: 84px;
@@ -271,25 +385,8 @@ main > section {
   color: var(--text-soft);
 }
 
-.project-plus {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--text-soft);
-  transition: transform 0.2s ease;
-  justify-self: end;
-}
-
-.project-toggle[aria-expanded="true"] .project-plus {
-  transform: rotate(45deg);
-  color: var(--accent);
-}
-
 .project-detail {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .project-detail p {
@@ -348,11 +445,6 @@ main > section {
   color: var(--paper);
   background: var(--accent);
   border-color: var(--accent);
-}
-
-.project-card.open .project-detail {
-  padding-top: 4px;
-  border-top: 1px solid var(--line);
 }
 
 /* ============================================
@@ -465,14 +557,56 @@ main > section {
 .tooltip.visible { opacity: 1; transform: translateY(0); }
 
 /* ============================================
-   RESPONSIVE
+   PROJECT DETAIL PAGES
    ============================================ */
+.project-page {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 40px var(--edge) 90px;
+}
+
+.back-link {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--text-soft);
+  margin-bottom: 40px;
+}
+.back-link:hover { color: var(--accent); }
+
+.project-page-tag {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-2);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.project-page h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.12;
+  max-width: 20ch;
+  margin: 0 0 16px;
+}
+
+.project-page-lede {
+  font-size: 18px;
+  color: var(--text-soft);
+  max-width: 56ch;
+  margin-bottom: 44px;
+}
+
+.project-page .project-detail {
+  max-width: 66ch;
+}
 @media (max-width: 640px) {
-  .project-toggle {
-    grid-template-columns: 56px 1fr 20px;
+  .project-card {
+    grid-template-columns: 56px 1fr;
     gap: 14px;
   }
   .project-visual { width: 56px; height: 40px; }
   .toolkit-row { grid-template-columns: 1fr; gap: 4px; }
+  .education-head, .experience-head { flex-direction: column; gap: 2px; }
   .site-footer { flex-direction: column; gap: 14px; align-items: flex-start; }
 }
