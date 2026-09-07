@@ -40,3 +40,30 @@ document.querySelectorAll('.term').forEach((term) => {
 document.addEventListener('click', (e) => {
   if (activeTerm && !e.target.classList.contains('term')) hideTip();
 });
+
+// ---- Scroll-reveal for sections ----
+const revealTargets = document.querySelectorAll('.reveal');
+if (revealTargets.length) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  revealTargets.forEach((el) => revealObserver.observe(el));
+}
+
+// ---- Bot mascot reacts to which section is on screen ----
+const trackedSections = document.querySelectorAll('main > section[id]');
+if (trackedSections.length) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        document.body.setAttribute('data-section', entry.target.id);
+      }
+    });
+  }, { threshold: 0.5 });
+  trackedSections.forEach((el) => sectionObserver.observe(el));
+}

@@ -539,20 +539,8 @@ main > section {
 }
 
 /* ============================================
-   FOOTER
+   FOOTER (see FOOTER GRID rules near end of file)
    ============================================ */
-.site-footer {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 30px var(--edge) 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-  color: var(--text-soft);
-}
-.site-footer nav { display: flex; gap: 20px; }
-.site-footer nav a:hover { color: var(--ink); }
 
 /* ============================================
    TOOLTIP
@@ -626,5 +614,152 @@ main > section {
   .project-visual { width: 56px; height: 40px; }
   .toolkit-row { grid-template-columns: 1fr; gap: 4px; }
   .education-head, .experience-head { flex-direction: column; gap: 2px; }
-  .site-footer { flex-direction: column; gap: 14px; align-items: flex-start; }
+}
+
+/* ============================================
+   LANGUAGES BLOCK
+   ============================================ */
+.languages-block {
+  margin-top: 34px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+.languages-block h4 {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  margin: 0 0 12px;
+}
+.languages-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  font-size: 15px;
+  color: var(--text-soft);
+}
+.languages-list strong { color: var(--ink); }
+
+/* ============================================
+   PROJECT CARD HOVER SNEAK-PEEK
+   ============================================ */
+.project-peek {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent);
+  transition: max-height 0.25s ease, opacity 0.2s ease, margin-top 0.25s ease;
+}
+.project-card:hover .project-peek,
+.project-card:focus-visible .project-peek {
+  max-height: 40px;
+  opacity: 1;
+  margin-top: 8px;
+}
+
+/* ============================================
+   SCROLL-REVEAL ANIMATION
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   SCROLL-REACTIVE BOT MASCOT
+   ============================================ */
+.bot-mascot {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 52px;
+  height: 52px;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0.92;
+  transition: transform 0.4s ease;
+}
+.bot-mascot svg { width: 100%; height: 100%; }
+.bot-mascot .bot-body { fill: var(--paper-2); stroke: var(--ink); stroke-width: 3; }
+.bot-mascot .bot-eye { fill: var(--ink); transition: fill 0.4s ease, cy 0.4s ease; }
+.bot-mascot .bot-antenna { stroke: var(--ink); stroke-width: 3; }
+.bot-mascot .bot-tip { fill: var(--accent); transition: fill 0.4s ease; }
+
+/* Section-based mascot color states, toggled via JS */
+body[data-section="about"] .bot-tip,
+body[data-section="education"] .bot-tip { fill: var(--accent-2); }
+body[data-section="work"] .bot-eye,
+body[data-section="experience"] .bot-eye { fill: var(--accent); }
+body[data-section="contact"] .bot-mascot { transform: translateY(-4px) rotate(-6deg); }
+
+@media (max-width: 640px) {
+  .bot-mascot { width: 40px; height: 40px; right: 14px; bottom: 14px; }
+}
+
+/* ============================================
+   FOOTER GRID
+   ============================================ */
+.site-footer {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 50px var(--edge) 30px;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr 1fr;
+  gap: 28px;
+  padding-bottom: 34px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-col h5 {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: lowercase;
+  margin: 0 0 2px;
+}
+.footer-col a {
+  color: var(--text-soft);
+  font-size: 13.5px;
+}
+.footer-col a:hover { color: var(--ink); }
+
+.footer-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--text-soft);
+}
+
+.footer-col--contact { text-align: left; }
+
+.footer-bottom {
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  font-size: 12.5px;
+}
+
+@media (max-width: 720px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+  }
 }

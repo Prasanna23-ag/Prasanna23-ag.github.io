@@ -37,7 +37,7 @@
   </section>
 
   <!-- MY STORY -->
-  <section id="about" class="story">
+  <section id="about" class="story reveal">
     <div class="section-kicker">my story</div>
     <h2>I'd rather teach a robot to think than tell it exactly what to do.</h2>
 
@@ -58,7 +58,7 @@
   </section>
 
   <!-- MY EDUCATION -->
-  <section id="education" class="education">
+  <section id="education" class="education reveal">
     <div class="section-kicker">my education</div>
     <h2>Still very much in school, in the best way.</h2>
 
@@ -80,10 +80,19 @@
         <p class="education-detail">GPA 8.97/10 (10 being the best possible grade).</p>
       </div>
     </div>
+
+    <div class="languages-block">
+      <h4>Languages</h4>
+      <div class="languages-list">
+        <span><strong>English</strong> — professional proficiency</span>
+        <span><strong>German</strong> — intermediate proficiency (B1)</span>
+        <span><strong>Hindi</strong> — native proficiency</span>
+      </div>
+    </div>
   </section>
 
   <!-- MY EXPERIENCE -->
-  <section id="experience" class="experience">
+  <section id="experience" class="experience reveal">
     <div class="section-kicker">my experience</div>
     <h2>Where I've actually gotten my hands dirty.</h2>
 
@@ -141,7 +150,7 @@
   </section>
 
   <!-- MY WORK -->
-  <section id="work" class="work">
+  <section id="work" class="work reveal">
     <div class="section-kicker">my work</div>
     <h2>Things I've built, broken, and learned from.</h2>
     <p class="work-lede">Some of this solves a real problem for a real robot. Some of it exists because I wanted to know if it could be done. Tap a project to read the full story.</p>
@@ -156,6 +165,7 @@
           <span class="project-tag">MSc thesis · grade 1.3</span>
           <h3>Diffusion-Based Trajectory Planning</h3>
           <p>Teaching a TurtleBot to plan its path with a diffusion model instead of a classical planner.</p>
+          <span class="project-peek">Python · PyTorch · ROS2 · Nav2 · SLAM</span>
         </div>
       </a>
 
@@ -167,6 +177,7 @@
           <span class="project-tag">personal project</span>
           <h3>Voice-Controlled Navigation</h3>
           <p>Say where to go, and a simulated robot goes there, in whatever accent you've got.</p>
+          <span class="project-peek">ROS2 · Whisper · Gazebo · Python</span>
         </div>
       </a>
 
@@ -178,6 +189,7 @@
           <span class="project-tag">project group · WISE 2023/24</span>
           <h3>AI-Based SI/PI/EMC-Compliant PCB</h3>
           <p>Regression and CNN models to predict and classify signal integrity in high-speed PCB circuits.</p>
+          <span class="project-peek">eCADSTAR · TensorFlow · Keras · Streamlit</span>
         </div>
       </a>
 
@@ -189,6 +201,7 @@
           <span class="project-tag">bachelor's project</span>
           <h3>Contour Crafting 3D Printer</h3>
           <p>A downscaled wall-printing system with an IoT-controlled end effector.</p>
+          <span class="project-peek">IoT · Embedded control · Concrete flow management</span>
         </div>
       </a>
 
@@ -200,6 +213,7 @@
           <span class="project-tag">bachelor's projects</span>
           <h3>Robotics Mini Projects</h3>
           <p>Seven embedded robot builds — obstacle avoidance, line following, wireless and PC control.</p>
+          <span class="project-peek">IR/LDR sensors · Motor drivers · Embedded C</span>
         </div>
       </a>
 
@@ -207,7 +221,7 @@
   </section>
 
   <!-- MY TOOLKIT -->
-  <section id="toolkit" class="toolkit">
+  <section id="toolkit" class="toolkit reveal">
     <div class="section-kicker">my toolkit</div>
     <h2>The tools I reach for.</h2>
 
@@ -232,7 +246,7 @@
   </section>
 
   <!-- CONNECT -->
-  <section id="contact" class="connect">
+  <section id="contact" class="connect reveal">
     <div class="section-kicker">let's connect</div>
     <h2>The internet is a big place, but I'm easy enough to find.</h2>
     <p class="connect-lede">Got a robotics role, a research idea, or a robot that needs to find its own way somewhere? Let's talk.</p>
@@ -244,29 +258,61 @@
       <!-- Replace # with your LinkedIn URL -->
       <a href="#">LinkedIn ↗</a>
     </div>
-
-    <div class="status-badge">
-      <span class="status-dot"></span>
-      <!-- edit this line any time your availability changes -->
-      open to robotics opportunities
-    </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <nav>
-    <a href="#about">My Story</a>
-    <a href="#education">My Education</a>
-    <a href="#experience">My Experience</a>
-    <a href="#work">My Work</a>
-    <a href="#toolkit">My Toolkit</a>
-    <a href="#contact">Let's Connect</a>
-  </nav>
-  <span id="year"></span>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h5>status</h5>
+      <div class="footer-status">
+        <span class="status-dot"></span>
+        <!-- edit this line any time your availability changes -->
+        open to robotics opportunities
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>navigation</h5>
+      <a href="#about">My Story</a>
+      <a href="#education">My Education</a>
+      <a href="#experience">My Experience</a>
+      <a href="#work">My Work</a>
+      <a href="#toolkit">My Toolkit</a>
+      <a href="#contact">Let's Connect</a>
+    </div>
+    <div class="footer-col">
+      <h5>my projects</h5>
+      <a href="projects/thesis/">Diffusion-Based Trajectory Planning</a>
+      <a href="projects/voice-teleop/">Voice-Controlled Navigation</a>
+      <a href="projects/pcb-emc/">AI-Based SI/PI/EMC-Compliant PCB</a>
+      <a href="projects/contour-crafting/">Contour Crafting 3D Printer</a>
+      <a href="projects/robotics-mini/">Robotics Mini Projects</a>
+    </div>
+    <div class="footer-col footer-col--contact">
+      <h5>find me elsewhere</h5>
+      <a href="mailto:prasanna23ag@gmail.com">prasanna23ag@gmail.com</a>
+      <a href="https://github.com/Prasanna23-ag" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span id="year"></span> © Prasanna Agarwal
+  </div>
 </footer>
 
 <div class="tooltip" id="tooltip" role="tooltip"></div>
+
+<div class="bot-mascot" aria-hidden="true">
+  <svg viewBox="0 0 60 60">
+    <line class="bot-antenna" x1="30" y1="6" x2="30" y2="14"/>
+    <circle class="bot-tip" cx="30" cy="5" r="3.5"/>
+    <rect class="bot-body" x="10" y="14" width="40" height="34" rx="8"/>
+    <circle class="bot-eye" cx="23" cy="31" r="4"/>
+    <circle class="bot-eye" cx="37" cy="31" r="4"/>
+    <line class="bot-antenna" x1="18" y1="48" x2="14" y2="54"/>
+    <line class="bot-antenna" x1="42" y1="48" x2="46" y2="54"/>
+  </svg>
+</div>
 
 <script src="script.js"></script>
 </body>
