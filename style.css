@@ -781,3 +781,43 @@ body[data-section="contact"] .bot-mascot { transform: translateY(-4px) rotate(-6
     row-gap: 30px;
   }
 }
+/* ============================================
+   RESULTS TABLE (thesis page)
+   ============================================ */
+.results-table-wrap {
+  overflow-x: auto;
+  margin: 4px 0 10px;
+}
+.results-table {
+  width: 100%;
+  min-width: 420px;
+  border-collapse: collapse;
+  font-size: 14.5px;
+  border: 1px solid var(--line);
+}
+.results-table th,
+.results-table td {
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+.results-table thead th {
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--paper-2);
+}
+.results-table tbody th {
+  font-weight: 500;
+  color: var(--text-soft);
+}
+.results-table td {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.results-table tbody tr:nth-child(even) {
+  background: var(--paper-2);
+}
+.results-note {
+  font-size: 13px;
+  color: var(--text-soft);
+}
