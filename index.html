@@ -113,7 +113,7 @@
         <p><strong>What I built:</strong></p>
         <ul class="experience-bullets">
           <li><strong>Pre-mapped localization:</strong> <code>mcs_mapping</code>, a ROS 2 package doing scan-to-map ICP (Kabsch alignment via SVD) with voxel downsampling and incremental map merging, producing 3D maps of container interiors from a Hesai LiDAR.</li>
-          <li><strong>Stereo doorway perception:</strong> a Python/OpenCV pipeline on Jetson measuring distance, lateral offset and steering angle to the container door from a fisheye camera pair, with gate width validated to 10–20 mm against tape measurement.</li>
+          <li><strong>Stereo doorway perception:</strong> a Python/OpenCV pipeline on Jetson measuring distance, lateral offset and steering angle to the container door from a fisheye camera pair, with gate width validated to 10-20 mm against tape measurement.</li>
           <li><strong>Independent cross-check:</strong> stereo distance validated against a ground-plane homography method: +0.98 correlation and 4 mm mean difference over a 500-frame run.</li>
           <li><strong>Stream debugging:</strong> traced a 5.8-second misalignment between two RTSP camera streams to stale decoder buffer entries, confirmed by both image correlation and packet bookkeeping.</li>
           <li><strong>Simulation test bed:</strong> a Gazebo model from a self-authored, CAD-derived URDF with four-wheel drive and steering via ros2_control, plus a simulated LiDAR running RTAB-Map, so the team can test mapping with no hardware in the loop.</li>
